@@ -5,7 +5,7 @@ var server = net.createServer(function(socket) {
   console.log('connection to server started');
   socket.on('data', function(reqData, resData) {
     var date = new Date();
-    var newFile = __dirname + "/tmp/" + date + ".txt";
+    var newFile = __dirname + "/tmp/" + date.toString() + ".txt";
 
     fs.writeFile(newFile, reqData, function(err) {
       if(err) return console.log(err);
